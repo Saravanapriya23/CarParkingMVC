@@ -1,0 +1,32 @@
+﻿@model IEnumerable<OnlineCarParking.Entity.CarParkingBooking>
+
+@{
+    ViewBag.Title = "Car";
+}
+
+<h2>Car</h2>
+<table border="1">
+    <tr>
+        <td>Package Name</td>
+        <td>Package Price</td>
+    </tr>
+    @foreach (OnlineCarParking.Entity.CarParkingBooking item in @Model)
+    {
+        <tr>
+            <td>
+                @item.carId
+            </td>
+            <td>
+                @item.carParkingSiteName
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @item.carParkingSiteLocation
+            </td>
+            <td>
+                @item.parkingSlots
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "CarParkingDetails";
+}
+
+<h2>CarParkingDetails</h2>
+<h3> CarParkingBooking-ViewData</h3>
+<table border="1">
+    <tr>
+        <td>carId</td>
+        <td>carParkingSiteName</td>
+        <td>carParkingSiteLocation</td>
+        <td>parkingSlots </td>
+    </tr>
+    @foreach (OnlineCarParking.Entity.CarParkingBooking item in (List<OnlineCarParking.Entity.CarParkingBooking>)ViewData["carparkingBookings"])
+    {
+        <tr>
+            <td>
+                @item.carId
+            </td>
+            <td>
+                @item.carParkingSiteName
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @item.carParkingSiteLocation
+            </td>
+            <td>
+                @item.parkingSlots
+            </td>
+        </tr>
+    }
+</table>
+<h3>CarParkingBooking-ViewBag</h3>
+<table border="1">
+    <tr>
+        <td>carId</td>
+        <td>carParkingSiteName</td>
+        <td>carParkingSiteLocation</td>
+        <td>parkingSlots </td>
+    </tr>
+    @foreach (OnlineCarParking.Entity.CarParkingBooking item in ViewBag.CarParkingBooking)
+    {
+        <tr>
+            <td>
+                @item.carId
+            </td>
+            <td>
+                @item.carParkingSiteName
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @item.carParkingSiteLocation
+            </td>
+            <td>
+                @item.parkingSlots
+            </td>
+        </tr>
+    }
+</table>
+
+
