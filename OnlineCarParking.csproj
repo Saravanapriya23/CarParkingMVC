@@ -129,9 +129,12 @@
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\CarParkingSite\TempDataChecking.cshtml" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\CarParkingSite\Create.cshtml" />
+    <Content Include="Views\CarParkingSite\Display.cshtml" />
+    <Content Include="Views\CarParkingSite\TempDataCheck.cshtml" />
+    <Content Include="Views\CarParkingSite\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

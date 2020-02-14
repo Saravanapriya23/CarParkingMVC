@@ -16,7 +16,7 @@ namespace OnlineCarParking
             routes.MapRoute(
                 name: "Default",
                 url: "{Controller}/{action}/{id}",
-                defaults: new { controller = "CarParkingSite", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "CarParkingSite", action = "TempDataCheck", id = UrlParameter.Optional }
             );
         }
     }
