@@ -62,7 +62,7 @@ namespace OnlineCarParking.Controllers
         }
         public ActionResult Update(CarParkingBooking carParking)
         {
-            carparkingsitedetails.Add(carParking);
+            carparkingsitedetails.UpdateCarParkingDetails(carParking);
             TempData["Result"] = "Added successfully";
             return RedirectToAction("TempDataCheck");
         }
