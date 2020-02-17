@@ -3,7 +3,7 @@
     ViewBag.Title = "TempDataChec";
 }
 
-<h2>TempDataChecking</h2>
+<h2>Car Parking Site Details</h2>
 @Html.ActionLink("Create a new Parking site details","Create")
 <br />
 <table border="1">
@@ -15,6 +15,7 @@
             <td>carParkingSiteName</td>
             <td>carParkingSiteLocation</td>
             <td>parkingSlots </td>
+            <td>Edit and Delete</td>
         </tr>
         <tr>
             <td>
@@ -29,8 +30,6 @@
             <td>
                 @item.parkingSlots
             </td>
-        </tr>
-        <tr>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.carId });
                 @Html.ActionLink("Delete", "Delete", new { id = item.carId });

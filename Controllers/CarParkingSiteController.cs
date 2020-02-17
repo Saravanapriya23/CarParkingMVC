@@ -35,6 +35,8 @@ namespace OnlineCarParking.Controllers
         }
         public ActionResult Display()
         {
+            IEnumerable<CarParkingBooking> carparkingBookings = carparkingsitedetails.GetCarParkingSiteDetails();
+            TempData["carparkingBookings"] = carparkingBookings;
             return View();
         }
         public ActionResult Create()
@@ -42,8 +44,19 @@ namespace OnlineCarParking.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(CarParkingBooking carParking)
+        [ActionName("Create")]
+        //public ActionResult CreateCarParkingDetails()
+        //{
+        //    CarParkingBooking carParking = new CarParkingBooking();
+        //    UpdateModel(carParking);
+        //    carparkingsitedetails.Add(carParking);
+        //    TempData["Result"] = "Added successfully";
+        //    return RedirectToAction("TempDataCheck");
+        //}
+        public ActionResult CreateCarParkingDetails()
         {
+            CarParkingBooking carParking = new CarParkingBooking();
+            TryUpdateModel(carParking);
             carparkingsitedetails.Add(carParking);
             TempData["Result"] = "Added successfully";
             return RedirectToAction("TempDataCheck");
@@ -58,10 +71,13 @@ namespace OnlineCarParking.Controllers
         public ActionResult Delete(int id)
         {
             CarParkingBooking carParking = carparkingsitedetails.GetParkingSiteDetailsById(id);
-            return View(carParking);
+            carparkingsitedetails.DeleteCarParkingDetails(carParking);
+            return RedirectToAction("TempDataCheck");
         }
-        public ActionResult Update(CarParkingBooking carParking)
+        public ActionResult Update()
         {
+            CarParkingBooking carParking = new CarParkingBooking();
+            TryUpdateModel(carParking);
             carparkingsitedetails.UpdateCarParkingDetails(carParking);
             TempData["Result"] = "Added successfully";
             return RedirectToAction("TempDataCheck");
